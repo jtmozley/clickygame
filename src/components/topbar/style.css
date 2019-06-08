@@ -1,0 +1,10 @@
+.bar {
+    background-color: grey;
+    color: white;
+    height: 86px;
+    font-size: 2.5rem;
+}
+
+.item {
+    margin: 13px 0;
+}
