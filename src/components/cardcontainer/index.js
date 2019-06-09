@@ -1,10 +1,10 @@
 import React from 'react'
 import './style.css'
 
-export default function container(){
+export default function Container(props){
     return (
         <div className="container">
-            <div className="row">{props.children}</div>
+            <div className="row justify-content-center">{props.children}</div>
         </div>
     )
 }

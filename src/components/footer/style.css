@@ -1,0 +1,12 @@
+.footer{
+    background-color: gray;
+    font-size: 2.0rem;
+}
+
+a {
+    color: black;
+}
+
+.fab {
+    padding: 0 3px;
+}

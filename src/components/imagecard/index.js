@@ -1,10 +1,8 @@
 import React from "react";
 import "./style.css";
 
-export default function Card() {
+export default function Card(props) {
   return (
-    <div>
-      <img className="img-thumbnail col-4" src={props.image} />
-    </div>
+      <img className="image col-md" src={props.image} alt={props.id}/>
   );
 }
