@@ -12,10 +12,8 @@ class App extends Component {
   state = {
     friends
   };
-
+  
   render() {
-    console.log(this.state.friends[0].image);
-
     return (
       <div>
         <Nav />
