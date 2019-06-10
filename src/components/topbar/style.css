@@ -2,11 +2,12 @@
     background-color: grey;
     color: white;
     height: 86px;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px black;
 }
 
 .item {
-    margin: 13px 0;
+    margin: 19px 0;
     padding: 0;
     max-width: 720px;
 }
