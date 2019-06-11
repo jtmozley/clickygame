@@ -8,30 +8,36 @@ import Card from "./components/imagecard/index.js";
 import Footer from "./components/footer/index.js";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
   state = {
     friends,
-    selectedImages: [], //everything but zero, 1
+    selectedImages: [],
     msg: "Click an Image to Begin",
     score: 0,
     topScore: 0
   };
 
+  //findFriend function called on click of an image
   findFriend = id => {
+    //find id duplicates in selectedImages array and return truthy or falsy
     const idCheck = this.state.selectedImages.find(myId => myId === id);
+    //add id of user selected image to array
     this.state.selectedImages.push(id);
+    //shuffle images
     this.shuffleImages(this.state.friends);
+    //update top score if needed
     if (this.state.score > this.state.topScore) {
       this.setState({
         topScore: this.state.score
       });
     }
+    //evaluate if the image has been previously selected
     if (idCheck) {
       this.setState({
         score: 0,
         msg: "You Lose",
         selectedImages: []
       });
+      setTimeout(() => this.setState({msg: "Click an Image to Begin"}), 1000)
     } else {
       this.setState({
         score: this.state.score + 1,
@@ -39,12 +45,14 @@ class App extends Component {
       });
     }
   };
-  //you will need a shuffle fx
-
+  //function for shuffling images for user display
   shuffleImages = array => {
-    console.log(array);
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   };
-
+  //rendering all components to display
   render() {
     return (
       <div>
